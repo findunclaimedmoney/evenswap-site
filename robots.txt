@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://evenswap.com.au/sitemap.xml
