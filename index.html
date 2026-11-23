@@ -241,6 +241,10 @@
     display: flex; gap: 8px; margin-bottom: 14px;
   }
   .search input { flex: 1; }
+  .ad {
+    width: min(420px, 100%); max-height: 78vh; border-radius: 18px; background: #111;
+    display: block; border: 1px solid var(--line);
+  }
   footer.foot { color: var(--muted); font-size: 13px; padding: 10px 0 28px; }
   .pill { font-size: 11px; font-weight: 700; letter-spacing: .04em; background: #e7c27a; color: #1b1914; border-radius: 999px; padding: 2px 6px; }
   .meter { height: 8px; background: #e7e1d6; border-radius: 99px; overflow: hidden; margin-top: 12px; }
@@ -391,6 +395,7 @@ function seed() {
         suburb:'Melbourne VIC', when:'just now', stock:80, sku:'UZZLE-EXP-STANDALONE'},
       {id:'uz3', seller:'u6', emoji:'👑', kind:'clearance', title:'The Uzzle: Stack Royale (new)', price:46.62, cost:10, ship:0,
         image:'img/stack-hq.jpg',
+        video:'video/uzzle-swap-the-scroll.mp4',
         buyUrl:'https://buy.stripe.com/28E9AS524dc9gUZ5E44c80m',
         stripePrice:'price_1UXT62EHzw6rVQI2XLnAkOXk', stripeProduct:'prod_VYaG2alkGQAj3C',
         desc:'New sealed Stack Royale. Amazon AU ~$56.62 — $10 under at $46.62. Free shipping. Card via Stripe (live).',
@@ -564,6 +569,12 @@ function renderHome(){
       </div>
     </div>
     <section class="block">
+      <div class="head"><div><h2>Swap the scroll</h2><p>Thirty seconds. Stack Royale, phones down.</p></div><a href="#/listing/uz3">Shop Stack Royale</a></div>
+      <video class="ad" controls playsinline preload="metadata" poster="img/stack-hq.jpg">
+        <source src="video/uzzle-swap-the-scroll.mp4" type="video/mp4" />
+      </video>
+    </section>
+    <section class="block">
       <div class="head"><div><h2>Live trades</h2><p>High-ticket things Facebook Marketplace prices badly. Inspect, then pay.</p></div><a href="#/browse">See all</a></div>
       <div class="grid">${rides.map(card).join('')}</div>
     </section>
@@ -662,6 +673,7 @@ function renderListing(id){
     <a href="#/browse">Back to browse</a>
     <div class="detail" style="margin-top:12px">
       <div>
+        ${l.video ? `<video class="ad" controls playsinline preload="metadata" poster="${esc(l.image || '')}" style="margin-bottom:12px"><source src="${esc(l.video)}" type="video/mp4" /></video>` : ''}
         <div class="detail-hero">${l.image ? `<img src="${esc(l.image)}" alt="${esc(l.title)}" />` : l.emoji}</div>
         <div class="panel" style="margin-top:14px">
           <h2>${esc(l.title)}</h2>
