@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://evenswap.com.au/</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://evenswap.com.au/#/browse</loc><changefreq>hourly</changefreq></url>
-  <url><loc>https://evenswap.com.au/#/wanted</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://evenswap.com.au/#/how</loc></url>
+  <url><loc>https://evenswap.vercel.app/</loc></url>
+  <url><loc>https://evenswap.vercel.app/shop</loc></url>
+  <url><loc>https://evenswap.vercel.app/catalogue</loc></url>
+  <url><loc>https://evenswap.vercel.app/marketplace</loc></url>
+  <url><loc>https://evenswap.vercel.app/product/stack-royale</loc></url>
 </urlset>
